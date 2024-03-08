@@ -36,8 +36,8 @@ The following steps need to be followed to successfully run the cEOS labs with C
      To confirm that docker is succesfully installed run the following test.
 
        ```shell
-    sudo docker run hello-world
-    ```
+     sudo docker run hello-world
+     ```
 
 sudo docker run hello-world
 
