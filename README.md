@@ -73,9 +73,6 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 docker import cEOS-lab.tar.xz ceosimage:TAG
 
-    ```shell
-    bash -c "$(curl -sL https://get.containerlab.dev)"
-    ```
 NOTE 1: make sure the docker import command is referncing the exact version you downloaded 
 NOTE 2: The tag is important, make sure to add "ceos" and the version 
 
