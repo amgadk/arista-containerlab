@@ -52,7 +52,7 @@ The following steps need to be followed to successfully run the cEOS labs with C
     ```
 
 
-###Installing Arista cEOS-Lab image
+### Installing Arista cEOS-Lab image
 
 Download the image from www.arista.com > Software Downloads > cEOS-Lab > EOS-4.2x.y > cEOS-lab-4.2x.y.tar.xz
 
