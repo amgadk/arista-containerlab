@@ -87,6 +87,24 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 ### Deploy topology using Containerlab
 
+1. Navigate to where the topology.yaml is
+
+2. The following command will deploy the lab
+
+    ```shell
+sudo containerlab deploy -t topology.yaml
+    ```
+-after deployed you can check the lab like this
+
+sudo containerlab inspect -t topology.yaml
+
+-to access ceos devices use ssh and the ip address (username and password are admin)
+
+ssh admin@172.16.1.101
+
+-to access linux hosts use the following command
+
+sudo docker exec -it clab-avdirb-client1 /bin/sh
 
 
 ## Resources
