@@ -1,0 +1,74 @@
+name: dual-dc-topology
+
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.30.4M
+    linux:
+      image: alpine-host
+  nodes:
+    dc1spine1:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.11
+    dc1spine2:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.12
+    dc1leaf1a:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.101
+    dc1leaf1b:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.102
+    dc1leaf1server1:
+      kind: linux
+      mgmt-ipv4: 172.16.1.155
+      env:
+        TMODE: lacp
+    dc2spine1:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.21
+    dc2spine2:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.22
+    dc2leaf1a:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.111
+    dc2leaf1b:
+      kind: ceos
+      mgmt-ipv4: 172.16.1.112
+    dc2leaf1server1:
+      kind: linux
+      mgmt-ipv4: 172.16.1.165
+      env:
+        TMODE: lacp
+    dcavdrunner:
+      kind: linux
+      image: ghcr.io/aristanetworks/avd/universal
+      mgmt-ipv4: 172.16.1.170
+      env:
+        TMODE: lacp
+  links:
+    - endpoints: ["dc1leaf1a:eth1", "dc1spine1:eth1"]
+    - endpoints: ["dc1leaf1b:eth1", "dc1spine1:eth2"]
+    - endpoints: ["dc1leaf1a:eth2", "dc1spine2:eth1"]
+    - endpoints: ["dc1leaf1b:eth2", "dc1spine2:eth2"]
+    - endpoints: ["dc1leaf1a:eth3", "dc1leaf1b:eth3"]
+    - endpoints: ["dc1leaf1a:eth4", "dc1leaf1b:eth4"]
+    - endpoints: ["dc1leaf1a:eth5", "dc1leaf1server1:eth1"]
+    - endpoints: ["dc1leaf1b:eth5", "dc1leaf1server1:eth2"]
+    - endpoints: ["dc2leaf1a:eth1", "dc2spine1:eth1"]
+    - endpoints: ["dc2leaf1b:eth1", "dc2spine1:eth2"]
+    - endpoints: ["dc2leaf1a:eth2", "dc2spine2:eth1"]
+    - endpoints: ["dc2leaf1b:eth2", "dc2spine2:eth2"]
+    - endpoints: ["dc2leaf1a:eth3", "dc2leaf1b:eth3"]
+    - endpoints: ["dc2leaf1a:eth4", "dc2leaf1b:eth4"]
+    - endpoints: ["dc2leaf1a:eth5", "dc2leaf1server1:eth1"]
+    - endpoints: ["dc2leaf1b:eth5", "dc2leaf1server1:eth2"]
+    - endpoints: ["dc1spine1:eth10", "dc2spine1:eth10"]
+    - endpoints: ["dc1spine2:eth10", "dc2spine2:eth10"]
+    - endpoints: ["dc1spine1:eth11", "dc2spine2:eth11"]
+    - endpoints: ["dc1spine2:eth11", "dc2spine1:eth11"]
+mgmt:
+  network: ceos_clab                
+  ipv4-subnet: 172.16.1.0/24
+  ipv6-subnet: 2001:172:16:1::/80
