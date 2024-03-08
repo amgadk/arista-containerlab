@@ -137,7 +137,6 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 ## Resources
 
-- [Arista Ansible AVD Collection](https://github.com/aristanetworks/ansible-avd)
-- [Arista CloudVision Collection](https://github.com/aristanetworks/ansible-cvp)
+- [Containerlab](https://containerlab.dev/)
 - [Arista AVD documentation](https://avd.arista.com)
 
