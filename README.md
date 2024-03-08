@@ -14,44 +14,24 @@ To access an ATD topology, please get in touch with your Arista representative.
 
 ## Lab topology
 
-The diagram below shows that the ATD lab topology has two data centers. We will only leverage DC1 in this example.
-
-<p align="center">
-  <img src="docs/imgs/atd-topo.png" alt="ATD Lab Topology" width="600"/>
-</p>
-
-## ATD topology device list
-
-| Device | IP Address |
-| ------ | ------------ |
-| s1-spine1 |192.168.0.10 |
-| s1-spine2 |192.168.0.11 |
-| s1-leaf1  |192.168.0.12 |
-| s1-leaf2  |192.168.0.13 |
-| s1-leaf3  |192.168.0.14 |
-| s1-leaf4  |192.168.0.15 |
-| s1-host1  |192.168.0.16 |
-| s1-host2  |192.168.0.17 |
-
-> Current repository is built with cEOS management interface (`Management0`). If you run a vEOS topology, please update `mgmt_interface` field to `Management1` in the [ATD_LAB](./atd-inventory/group_vars/ATD_LAB.yml) `group_vars`.
+Each lab example will include a readme detailing the topology used.
 
 ## Getting Started
 
-### Connect to your ATD lab environment
+The following steps need to be followed to successfully run the cEOS labs with Containerlab
 
-- Don't hesitate to contact your local account team if you need an ATD Lab instance.
-- Once connected to the ATD lab instance, select the Programmability IDE.
-- This container is built with all the requirements and Python modules to run AVD playbooks.
+### Install Docker
 
-1. Next (optional), set up a Git user and email for the ATD lab environment
 
-    - Open a terminal window in VS Code View -> Terminal from the menu, and run the following commands:
+1. Follow the appropriate steps to install docker on your enviornment
 
-    ```shell
-    # Setup your git global config (optional)
-    git config --global user.email "you@example.com"
-    git config --global user.name "Your Name"
-    ```
+  **Example**:Install using docker convenience script on linux
+
+  '''curl -fsSL https://get.docker.com -o get-docker.sh'''
+ 
+ sudo sh get-docker.sh
+
+sudo docker run hello-world
 
 2. Set credentials and install any required tools
 
