@@ -25,11 +25,11 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 1. Follow the appropriate steps to install docker on your enviornment
 
-  **Example**:Install using docker convenience script on linux
+    Example: Install docker using the convenience script on linux
 
-  ```shell
-  curl -fsSL https://get.docker.com -o get-docker.sh
-  ```
+    ```shell
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    ```
  
  sudo sh get-docker.sh
 
