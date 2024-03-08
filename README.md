@@ -95,7 +95,12 @@ The following steps need to be followed to successfully run the cEOS labs with C
     sudo containerlab deploy -t topology.yaml
     ```
 
--after deployed you can check the lab like this
+3. After the lab is deployed you can check it's status with the following command
+
+    ```shell
+    sudo containerlab inspect -t topology.yaml
+    ```
+
 
 sudo containerlab inspect -t topology.yaml
 
