@@ -10,7 +10,7 @@ The diagram below shows that this lab topology has two data centers.
   <img src="/docs/imgs/dual-dc-l3ls.png" alt="Lab Topology" width="800"/>
 </p>
 
-## ATD topology device list
+## cEOS topology device list
 
 Out-of-band management IP allocation for DC1	172.16.1.0/24
 
@@ -34,6 +34,6 @@ Out-of-band management IP allocation for DC1	172.16.1.0/24
 | dc2-leaf1c  |172.16.1.161 |
 | dc2-leaf2c  |172.16.1.162 |
 
-> Current repository is built with cEOS management interface (`Management0`). If you run a vEOS topology, please update `mgmt_interface` field to `Management1` in the [ATD_LAB](./atd-inventory/group_vars/ATD_LAB.yml) `group_vars`.
+
 
 
