@@ -71,8 +71,8 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 4. Use the tar file to import the cEOS image to create a docker image ready for use
 
-```shell
-docker import cEOS-lab.tar.xz ceosimage:TAG
+   ```shell
+   docker import cEOS-lab-4.30.4M.tar.xz ceos:4.30.4M
    ```
 
 NOTE 1: make sure the docker import command is referncing the exact version you downloaded 
