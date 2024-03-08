@@ -43,9 +43,9 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 1. Follow the appropriate steps to install docker on your enviornment: https://containerlab.dev/install/
 
-Example: Install dContainerlabusing the convenience script on linux
+   Example: Install dContainerlabusing the convenience script on linux
 
-    bash -c "$(curl -sL https://get.containerlab.dev)"
+      bash -c "$(curl -sL https://get.containerlab.dev)"
 
 
 ## Resources
