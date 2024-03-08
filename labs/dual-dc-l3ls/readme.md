@@ -7,7 +7,7 @@ This example will create the Dual DC L3LS topology, the configuration for each d
 The diagram below shows that this lab topology has two data centers. 
 
 <p align="center">
-  <img src="/docs/imgs/dual-dc-l3ls.png" alt="Lab Topology" width="1200"/>
+  <img src="/docs/imgs/dual-dc-l3ls.png" alt="Lab Topology" width="1000"/>
 </p>
 
 ## ATD topology device list
