@@ -4,7 +4,7 @@
 
 ## About
 
-This repository is configured to run [`Arista cEOS`]([https://github.com/aristanetworks/ansible-cvp](https://containerlab.dev/manual/kinds/ceos/)) virtual labs using [`Containerlab`](https://containerlab.dev/) . Example labs can be found in the 'Labs' directory with accompanying details.
+This repository is configured to run [`Arista cEOS`](https://containerlab.dev/manual/kinds/ceos/) virtual labs using [`Containerlab`](https://containerlab.dev/) . Example labs can be found in the 'Labs' directory with accompanying details.
 
 <p align="center">
   <img src='docs/imgs/image1.png' alt='Arista cEOS and Containerlab'/>
