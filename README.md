@@ -38,58 +38,17 @@ The following steps need to be followed to successfully run the cEOS labs with C
     ```shell
     sudo docker run hello-world
     ```
+### Install Containerlab
 
 
-2. Set credentials and install any required tools
+1. Follow the appropriate steps to install docker on your enviornment: https://containerlab.dev/install/
+
+Example: Install dContainerlabusing the convenience script on linux
 
     ```shell
-    cd /home/coder/project/labfiles
-    export LABPASSPHRASE=`cat /home/coder/.config/code-server/config.yaml| grep "password:" | awk '{print $2}'`
-    ansible-galaxy collection install arista.avd:==4.4.0
-    export ARISTA_AVD_DIR=$(ansible-galaxy collection list arista.avd --format yaml | head -1 | cut -d: -f1)
-    pip3 install -r ${ARISTA_AVD_DIR}/arista/avd/requirements.txt
-    git clone https://github.com/arista-netdevops-community/atd-avd.git
-    cd atd-avd
+    bash -c "$(curl -sL https://get.containerlab.dev)"
     ```
 
-3. Run the playbook to prepare CloudVision for AVD
-
-    - Execute the following command:
-
-      ```shell
-      ansible-playbook playbooks/atd-prepare-lab.yml
-      ```
-
-    - Check that tasks in CloudVision have been automatically completed
-
-4. Run playbook to deploy AVD setup
-
-    - Run the following commands:
-
-      ```shell
-      ansible-playbook playbooks/atd-fabric-build.yml
-      ansible-playbook playbooks/atd-fabric-provision.yml
-      ```
-
-    - Run pending tasks in CloudVision Portal manually.
-
-5. Run validation and snapshot playbooks
-
-    - Run the following commands:
-
-      ```shell
-      # Run audit playbook to validate the fabric state
-      ansible-playbook playbooks/atd-validate-states.yml
-
-      # Run the atd-snapshot playbook to collect show commands
-      ansible-playbook playbooks/atd-snapshot.yml
-      ```
-
-    - Review generated output.
-
-## Step-by-step walkthrough
-
-A complete [step-by-step guide](./DEMO.md) is available.
 
 ## Resources
 
