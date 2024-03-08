@@ -52,6 +52,29 @@ The following steps need to be followed to successfully run the cEOS labs with C
     ```
 
 
+###Installing Arista cEOS-Lab image
+
+Download the image from www.arista.com > Software Downloads > cEOS-Lab > EOS-4.2x.y > cEOS-lab-4.2x.y.tar.xz
+
+Copy the cEOS-lab-4.2x.y.tar.xz to the host/server/VM.
+
+Ensure Docker is already set up and running.
+
+docker version
+
+Next, use the tar file to import the cEOS-Lab image using the following command
+
+docker import cEOS-lab.tar.xz ceosimage:TAG
+
+Example
+
+docker import cEOS64-lab-4.26.1F.tar.xz ceosimage:4.26.1F
+Now you should be able to see the Arista cEOS-Lab image.
+
+docker images | egrep "REPO|ceos"
+
+
+
 ## Resources
 
 - [Arista Ansible AVD Collection](https://github.com/aristanetworks/ansible-avd)
