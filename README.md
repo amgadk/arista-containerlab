@@ -39,6 +39,12 @@ The following steps need to be followed to successfully run the cEOS labs with C
      sudo docker run hello-world
      ```
 
+         ```shell
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
+    sudo sh get-docker.sh
+    ```
+
 sudo docker run hello-world
 
 2. Set credentials and install any required tools
