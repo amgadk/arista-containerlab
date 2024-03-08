@@ -71,7 +71,7 @@ topology:
     - endpoints: ["dc2leaf1a:eth4", "dc2leaf1b:eth4"]
     - endpoints: ["dc2leaf1a:eth5", "hosta:eth1"]
     - endpoints: ["dc2leaf1b:eth5", "hosta:eth2"]
-    - endpoints: ["dc1spine1:eth5", "dc1spine1:eth5"]
+    - endpoints: ["dc1spine1:eth5", "dc1spine2:eth5"]
     - endpoints: ["dc1spine1:eth6", "dc1spine2:eth6"]
     - endpoints: ["dc2spine1:eth5", "dc2spine1:eth5"]
     - endpoints: ["dc2spine1:eth6", "dc2spine2:eth6"]
