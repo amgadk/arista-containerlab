@@ -54,26 +54,36 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 ### Installing Arista cEOS-Lab image
 
-Download the image from www.arista.com > Software Downloads > cEOS-Lab > EOS-4.2x.y > cEOS-lab-4.2x.y.tar.xz
+1. Download the cEOS image from www.arista.com
 
-Copy the cEOS-lab-4.2x.y.tar.xz to the host/server/VM.
+      -Software Downloads
+         -cEOS-Lab
+            -EOS-4.2x.y
+               cEOS-lab-4.2x.y.tar.xz
 
-Ensure Docker is already set up and running.
+2. Copy the cEOS-lab-4.2x.y.tar.xz to the host/server/VM.
 
-docker version
+3. Ensure Docker is already set up and running.
 
-Next, use the tar file to import the cEOS-Lab image using the following command
+    ```shell
+    docker version
+    ```
+
+4. Use the tar file to import the cEOS image to create a docker image ready for use
 
 docker import cEOS-lab.tar.xz ceosimage:TAG
 
-Example
+    ```shell
+    docker import cEOS-lab-4.30.4M.tar.xz ceos:4.30.4M
+    ```
+NOTE 1: make sure the docker import command is referncing the exact version you downloaded 
+NOTE 2: The tag is important, make sure to add "ceos" and the version 
 
-docker import cEOS64-lab-4.26.1F.tar.xz ceosimage:4.26.1F
-Now you should be able to see the Arista cEOS-Lab image.
+5. Confirm that the cEOS image is ready using the following command
 
-docker images | egrep "REPO|ceos"
-
-
+    ```shell
+    docker images | egrep "REPO|ceos"
+    ```
 
 ## Resources
 
