@@ -18,22 +18,17 @@ Out-of-band management IP allocation for DC1	172.16.1.0/24
 
 | Device | IP Address |
 | ------ | ------------ |
-| dc1-spine1 |172.16.1.11 |
-| dc1-spine2 |172.16.1.12 |
-| dc1-leaf1a  |172.16.1.101 |
-| dc1-leaf1b  |172.16.1.102 |
-| dc1-leaf2a  |172.16.1.103 |
-| dc1-leaf2b  |172.16.1.104 |
-| dc1-leaf1c  |172.16.1.151 |
-| dc1-leaf2c  |172.16.1.152 |
-| dc2-spine1 |172.16.1.21 |
-| dc2-spine2 |172.16.1.22 |
-| dc2-leaf1a  |172.16.1.111 |
-| dc2-leaf1b  |172.16.1.112 |
-| dc2-leaf2a  |172.16.1.113 |
-| dc2-leaf2b |172.16.1.114 |
-| dc2-leaf1c  |172.16.1.161 |
-| dc2-leaf2c  |172.16.1.162 |
+| dc1spine1 |172.16.1.11 |
+| dc1spine2 |172.16.1.12 |
+| dc1leaf1a  |172.16.1.111 |
+| dc1leaf1b  |172.16.1.112 |
+| hostb  |172.16.1.155 |
+| hostc  |172.16.1.156 |
+| dc2spine1 |172.16.1.21 |
+| dc2spine2 |172.16.1.22 |
+| dc2leaf1a  |172.16.1.121 |
+| dc2leaf1b  |172.16.1.122 |
+| hosta  |172.16.1.165 |
 
 
 
