@@ -1,13 +1,13 @@
-# AVD Arista Validated Design for Arista Test Drive
+# Arista Containerlab Labs
 
-![Arista CloudVision Automation](https://img.shields.io/badge/Arista-CVP%20Automation-blue) ![Arista EOS Automation](https://img.shields.io/badge/Arista-EOS%20Automation-blue)
+
 
 ## About
 
-This repository is configured to run [`arista.cvp`](https://github.com/aristanetworks/ansible-cvp) & [`arista.avd`](https://github.com/aristanetworks/ansible-avd) Ansible collections against the Arista Test Drive (ATD) single data center topology.
+This repository is configured to run [`Arista cEOS`]([https://github.com/aristanetworks/ansible-cvp](https://containerlab.dev/manual/kinds/ceos/)) virtual labs using [`Containerlab`](https://containerlab.dev/) . Example labs can be found in the 'Labs' directory with accompanying details.
 
 <p align="center">
-  <img src='docs/imgs/cv_ansible_logo.png' alt='Arista CloudVision and Ansible'/>
+  <img src='docs/imgs/image1.png' alt='Arista cEOS and Containerlab'/>
 </p>
 
 To access an ATD topology, please get in touch with your Arista representative.
