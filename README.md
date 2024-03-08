@@ -47,6 +47,10 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
       bash -c "$(curl -sL https://get.containerlab.dev)"
 
+    ```shell
+    bash -c "$(curl -sL https://get.containerlab.dev)"
+    ```
+
 
 ## Resources
 
