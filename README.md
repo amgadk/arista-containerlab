@@ -92,6 +92,11 @@ The following steps need to be followed to successfully run the cEOS labs with C
 2. The following command will deploy the lab
 
     ```shell
+    sudo containerlab deploy -t topology.yaml
+    ```
+
+
+    ```shell
 sudo containerlab deploy -t topology.yaml
     ```
 -after deployed you can check the lab like this
