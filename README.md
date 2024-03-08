@@ -120,15 +120,19 @@ The following steps need to be followed to successfully run the cEOS labs with C
     ```
 
 
-sudo containerlab inspect -t topology.yaml
+4. To access cEOS devices use ssh and the ip address (username and password are admin)
 
--to access ceos devices use ssh and the ip address (username and password are admin)
+    ```shell
+    ssh admin@172.16.1.101
+    ```
 
-ssh admin@172.16.1.101
+5. To access linux hosts use the following command
 
--to access linux hosts use the following command
+    ```shell
+    sudo docker exec -it clab-host1 /bin/sh
+    ```
 
-sudo docker exec -it clab-avdirb-client1 /bin/sh
+   Note: The container name is used "clab-host1", you will see this when you run the containerlab inspect command (step 3)
 
 
 ## Resources
