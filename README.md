@@ -46,7 +46,6 @@ The following steps need to be followed to successfully run the cEOS labs with C
 Example: Install dContainerlabusing the convenience script on linux
 
     bash -c "$(curl -sL https://get.containerlab.dev)"
-    ```
 
 
 ## Resources
