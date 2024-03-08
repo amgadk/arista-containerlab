@@ -8,7 +8,7 @@ This example will create the Dual DC L3LS topology, the configuration for each d
 The diagram below shows that this lab topology has two data centers. 
 
 <p align="center">
-  <img src="/docs/imgs/dualdctopology.png" alt="Lab Topology" width="800"/>
+  <img src="/docs/imgs/dualdctopology.png" alt="Lab Topology" width="600"/>
 </p>
 
 ## cEOS topology device list
