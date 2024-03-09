@@ -92,3 +92,7 @@ topology:
     - endpoints: ["DC1-SP1:eth2", "DC2-SP2:eth2"]
     - endpoints: ["DC1-SP2:eth2", "DC2-SP1:eth2"]
     - endpoints: ["DC1-SP2:eth1", "DC2-SP2:eth1"]
+mgmt:
+  network: ceos_clab                
+  ipv4-subnet: 192.168.1.0/24
+  ipv6-subnet: 2001:192:168:0::/80
