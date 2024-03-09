@@ -11,6 +11,7 @@ topology:
   nodes:
     DC1-SP1:
       kind: ceos
+      startup-config: /configs/dc1sp1.cfg
       mgmt-ipv4: 192.168.0.10
     DC1-SP2:
       kind: ceos
