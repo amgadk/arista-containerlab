@@ -1,0 +1,94 @@
+name: dualdcvxlan
+
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.30.4M
+    linux:
+      image: alpine-host
+
+# DC1
+  nodes:
+    DC1-SP1:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.10
+    DC1-SP2:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.11
+    DC1-LF1:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.12
+    DC1-LF2:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.13
+    DC1-HOST-A:
+      kind: linux
+      mgmt-ipv4: 192.168.0.14
+      env:
+        TMODE: lacp
+# DC2
+
+    DC2-SP1:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.110
+    DC2-SP2:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.111
+    DC2-LF1:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.112
+    DC2-LF2:
+      kind: ceos
+      mgmt-ipv4: 192.168.0.113
+    DC2-HOST-B:
+      kind: linux
+      mgmt-ipv4: 192.168.0.114
+      env:
+        TMODE: lacp
+    DC2-HOST-C:
+      kind: linux
+      mgmt-ipv4: 192.168.0.115
+      env:
+        TMODE: lacp
+
+  links:
+  ###### DC1 CONNECTIVITY ######
+#
+### DC1-SP1 TO LEAVES
+    - endpoints: ["DC1-SP1:eth38", "DC1-LF1:eth38"]
+    - endpoints: ["DC1-SP1:eth39", "DC1-LF2:eth39"]
+    - endpoints: ["DC1-SP2:eth39", "DC1-LF1:eth39"]
+    - endpoints: ["DC1-SP2:eth38", "DC1-LF2:eth38"]
+  ### DC1-SP1/SP2 MLAG
+    - endpoints: ["DC1-SP1:eth47", "DC1-SP2:eth47"]
+    - endpoints: ["DC1-SP1:eth48", "DC1-SP2:eth48"]
+  ### DC1-LF1/LF2 MLAG
+    - endpoints: ["DC1-LF1:eth47", "DC1-LF2:eth47"]
+    - endpoints: ["DC1-LF1:eth48", "DC1-LF2:eth48"]
+  ### DC1-LF1/LF2 TO HOSTS
+    - endpoints: ["DC1-LF1:eth1", "DC1-HOST-A:eth1"]
+    - endpoints: ["DC1-LF2:eth1", "DC1-HOST-A:eth2"]
+
+  ###### DC2 CONNECTIVITY ######
+
+  ### DC2-SP TO LEAVES
+    - endpoints: ["DC2-SP1:eth38", "DC2-LF1:eth38"]
+    - endpoints: ["DC2-SP1:eth39", "DC2-LF2:eth39"]
+    - endpoints: ["DC2-SP2:eth39", "DC2-LF1:eth39"]
+    - endpoints: ["DC2-SP2:eth38", "DC2-LF2:eth38"]
+  ### DC2-SP1/SP2 MLAG
+    - endpoints: ["DC2-SP1:eth47", "DC2-SP2:eth47"]
+    - endpoints: ["DC2-SP1:eth48", "DC2-SP2:eth48"]
+  ### DC2-LF1/LF2 MLAG
+    - endpoints: ["DC2-LF1:eth47", "DC2-LF2:eth47"]
+    - endpoints: ["DC2-LF1:eth48", "DC2-LF2:eth48"]
+  ### DC2-LF1/LF2 TO HOSTS
+    - endpoints: ["DC2-LF1:eth1", "DC2-HOST-B:eth1"]
+    - endpoints: ["DC2-LF2:eth1", "DC2-HOST-B:eth2"]
+    - endpoints: ["DC2-LF1:eth2", "DC2-HOST-C:eth1"]
+    - endpoints: ["DC2-LF2:eth2", "DC2-HOST-C:eth2"]
+  ### DC1-SP1/SP2 MLAG TO DC2-SP1/SP2
+    - endpoints: ["DC1-SP1:eth1", "DC2-SP1:eth1"]
+    - endpoints: ["DC1-SP1:eth2", "DC2-SP2:eth2"]
+    - endpoints: ["DC1-SP2:eth2", "DC2-SP1:eth2"]
+    - endpoints: ["DC1-SP2:eth1", "DC2-SP2:eth1"]
