@@ -90,7 +90,9 @@ The following steps need to be followed to successfully run the cEOS labs with C
 
 2. Use the following command
 
-   ``` git clone https://github.com/amgadk/arista-containerlab.git```
+   ```shell
+   git clone https://github.com/amgadk/arista-containerlab.git
+   ```
    
 Note: If git isn't installed you will get an error (install git if necessary)
 
